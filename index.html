@@ -1,0 +1,526 @@
+
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>USCPA FAR | Study Guide</title>
+<style>
+:root{
+  --bg:#f3f6fb;--paper:#fff;--ink:#17243a;--muted:#65758c;
+  --line:#e2e8f1;--navy:#15263e;--blue:#2563eb;
+  --green:#087f68;--red:#c24747;--amber:#a86a14;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);
+font-family:-apple-system,BlinkMacSystemFont,"Hiragino Kaku Gothic ProN",
+"Yu Gothic",Meiryo,sans-serif;line-height:1.7}
+.sidebar{position:fixed;inset:0 auto 0 0;width:252px;background:var(--navy);
+color:white;padding:32px 18px;overflow-y:auto}
+.brand{font-size:24px;font-weight:900;letter-spacing:.02em;margin:0 12px 5px}
+.brand-sub{font-size:12px;color:#9fb2ce;margin:0 12px 32px}
+.sidebar a{display:block;text-decoration:none;color:#d6e1f2;
+padding:13px 14px;border-radius:10px;font-size:14px;margin:3px 0}
+.sidebar a:hover,.sidebar a.active{background:#2d4564;color:white}
+main{margin-left:252px;padding:36px 44px 90px;max-width:1550px}
+.hero{background:linear-gradient(125deg,#142741,#294f79);
+color:white;border-radius:20px;padding:45px;margin-bottom:26px}
+.kicker{font-size:12px;letter-spacing:.15em;font-weight:800;
+color:#8cc5ff;text-transform:uppercase}
+.hero h1{font-size:clamp(30px,4vw,48px);margin:10px 0}
+.hero p{color:#d1dfef;margin:0;font-size:16px}
+.search{width:100%;padding:15px 18px;border:1px solid var(--line);
+border-radius:12px;font:inherit;background:white;margin-bottom:20px}
+section.chapter{background:var(--paper);border:1px solid var(--line);
+border-radius:18px;padding:34px;margin-bottom:24px}
+.section-no{font-size:12px;color:var(--blue);font-weight:900;letter-spacing:.1em}
+h2{font-size:27px;margin:5px 0 8px}
+h3{font-size:19px;margin:28px 0 12px}
+.desc{color:var(--muted);margin:0 0 25px}
+.cards{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
+.card{background:#f8fafd;border:1px solid var(--line);border-radius:12px;padding:20px}
+.card h3{margin:0 0 8px;font-size:17px}
+.card p{margin:0;font-size:14px}
+.big{font-size:24px;font-weight:900;margin:8px 0}
+.blue{color:var(--blue)}.green{color:var(--green)}.red{color:var(--red)}
+.amber{color:var(--amber)}
+.table-wrap{overflow-x:auto;border:1px solid var(--line);border-radius:12px}
+table{border-collapse:collapse;width:100%;font-size:14px;min-width:620px}
+th{background:#eef3f9;color:#334762;font-weight:800;text-align:left}
+th,td{padding:12px 14px;border-bottom:1px solid var(--line);vertical-align:top}
+tr:last-child td{border-bottom:0}
+tr:nth-child(even) td{background:#fbfcfe}
+.formula{font-family:ui-monospace,SFMono-Regular,Consolas,monospace;
+background:#eef4ff;color:#174d9a;padding:14px 17px;border-radius:9px;
+font-size:14px;overflow-x:auto;margin:10px 0;white-space:normal}
+.note{border-left:4px solid var(--blue);background:#eff5ff;
+padding:15px 19px;border-radius:7px;margin:20px 0;font-size:14px}
+.note.warn{border-color:#d39a3b;background:#fff7e8}
+.note.good{border-color:var(--green);background:#eaf8f3}
+.pill{display:inline-block;font-size:12px;font-weight:800;
+border-radius:6px;padding:3px 8px;background:#e7efff;color:#1d56b7}
+.pill.green{background:#e3f6ef;color:#087f68}
+.pill.red{background:#ffebeb;color:#ad3434}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.flow{display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin:14px 0}
+.step{background:#eaf1fb;border-radius:9px;padding:12px 15px;font-weight:800}
+.arrow{color:#71819a;font-size:22px}
+details{border:1px solid var(--line);border-radius:10px;padding:12px 17px;margin:10px 0}
+summary{cursor:pointer;font-weight:800}
+.small{font-size:13px;color:var(--muted)}
+footer{color:var(--muted);font-size:13px;padding:20px}
+@media(max-width:950px){
+.sidebar{position:static;width:auto;padding:17px;display:flex;flex-wrap:wrap;gap:5px}
+.brand,.brand-sub{width:100%;margin:0 5px}
+.brand-sub{margin-bottom:8px}
+.sidebar a{padding:8px 10px;font-size:12px}
+main{margin:0;padding:18px}
+.hero{padding:30px 24px}
+section.chapter{padding:22px 17px}
+.cards,.two{grid-template-columns:1fr}
+}
+@media print{
+.sidebar,.search{display:none}
+main{margin:0;padding:0;max-width:none}
+body{background:white}
+.hero{background:white;color:#17243a;border:1px solid #ddd}
+.hero p{color:#555}
+section.chapter{break-before:page;border:0;border-radius:0;padding:15px}
+details{break-inside:avoid}
+}
+</style>
+</head>
+<body>
+
+<nav class="sidebar">
+  <div class="brand">FAR / NOTES</div>
+  <div class="brand-sub">USCPA Financial Accounting</div>
+  <a href="#cf">01　キャッシュフロー</a>
+  <a href="#securities">02　有価証券の分類変更</a>
+  <a href="#sec">03　SEC提出期限</a>
+  <a href="#ratios">04　財務比率・CVP</a>
+  <a href="#inventory">05　棚卸資産</a>
+  <a href="#tax">06　税効果会計</a>
+  <a href="#corrections">重要な修正点</a>
+</nav>
+
+<main>
+<header class="hero">
+  <div class="kicker">USCPA / FAR / MASTER REFERENCE</div>
+  <h1>Financial Accounting<br>学習リファレンス</h1>
+  <p>暗記表・公式・判断ルールを一元化。重要な誤記を修正した復習用ガイド。</p>
+</header>
+
+<input class="search" id="search" type="search"
+placeholder="このページを検索：例）ROE、DTA、LIFO、AOCI、売掛金">
+
+<section class="chapter" id="cf">
+  <div class="section-no">CHAPTER 01</div>
+  <h2>キャッシュフロー計算書｜間接法</h2>
+  <p class="desc">Indirect Method — 純利益を営業活動によるキャッシュフローへ調整する。</p>
+
+  <div class="cards">
+    <div class="card">
+      <h3>営業資産</h3>
+      <div class="big red">増加 → 減算</div>
+      <p>売掛金や棚卸資産が増えると、現金が拘束される。</p>
+    </div>
+    <div class="card">
+      <h3>営業負債</h3>
+      <div class="big green">増加 → 加算</div>
+      <p>買掛金や未払費用が増えると、現金支出が先送りされる。</p>
+    </div>
+    <div class="card">
+      <h3>非現金費用</h3>
+      <div class="big green">利益に加算</div>
+      <p>減価償却費などは純利益から差し引かれていても現金支出を伴わない。</p>
+    </div>
+  </div>
+
+  <h3>運転資本の増減</h3>
+  <div class="table-wrap">
+  <table>
+    <thead><tr><th>分類</th><th>勘定科目</th><th>増加</th><th>減少</th></tr></thead>
+    <tbody>
+      <tr><td>資産</td><td>売掛金 / Accounts Receivable</td><td class="red">減算</td><td class="green">加算</td></tr>
+      <tr><td>資産</td><td>棚卸資産 / Inventories</td><td class="red">減算</td><td class="green">加算</td></tr>
+      <tr><td>資産</td><td>前払費用 / Prepaid Expenses</td><td class="red">減算</td><td class="green">加算</td></tr>
+      <tr><td>負債</td><td>買掛金 / Accounts Payable</td><td class="green">加算</td><td class="red">減算</td></tr>
+      <tr><td>負債</td><td>未払費用 / Accrued Liabilities</td><td class="green">加算</td><td class="red">減算</td></tr>
+    </tbody>
+  </table>
+  </div>
+
+  <h3>非現金項目・損益調整</h3>
+  <div class="table-wrap">
+  <table>
+    <thead><tr><th>項目</th><th>間接法の調整</th><th>理由</th></tr></thead>
+    <tbody>
+      <tr><td>減価償却費</td><td class="green">加算</td><td>現金支出のない費用</td></tr>
+      <tr><td>固定資産売却益</td><td class="red">減算</td><td>売却代金は原則、投資活動に表示</td></tr>
+      <tr><td>固定資産売却損</td><td class="green">加算</td><td>営業CFから損失の影響を除外</td></tr>
+      <tr><td>持分法投資利益</td><td class="red">減算</td><td>利益計上自体は現金流入を伴わない</td></tr>
+      <tr><td>持分法投資損失</td><td class="green">加算</td><td>損失計上自体は現金流出を伴わない</td></tr>
+      <tr><td>社債ディスカウント償却</td><td class="green">加算</td><td>非現金の利息費用が純利益を減らす</td></tr>
+      <tr><td>社債プレミアム償却</td><td class="red">減算</td><td>非現金の利息費用減額を調整</td></tr>
+    </tbody>
+  </table>
+  </div>
+
+  <div class="note warn">
+    <strong>重要：</strong>社債の「利息支払」そのものと、ディスカウント・プレミアムの「償却」は別です。
+    上表は償却額の調整を示します。米国GAAPでは通常、支払利息は営業CFです。
+  </div>
+
+  <details>
+    <summary>繰延税金資産・負債はどう扱う？</summary>
+    <p>元メモの「DTA増加＝減算、DTL増加＝加算」は、純利益に反映された繰延税金費用・便益の調整を考える際の基本方向です。ただし、OCI・企業結合などに関係する税効果もあるため、残高増減を無条件にそのまま営業CFへ反映するわけではありません。</p>
+  </details>
+</section>
+
+<section class="chapter" id="securities">
+  <div class="section-no">CHAPTER 02</div>
+  <h2>有価証券の分類変更</h2>
+  <p class="desc">Debt Securities — HTM・Trading・AFSの6パターン。</p>
+
+  <div class="cards">
+    <div class="card"><h3>HTM</h3><div class="big">償却原価</div><p>Held-to-Maturity。原則、時価変動を損益に反映しない。</p></div>
+    <div class="card"><h3>TS</h3><div class="big blue">P/L</div><p>Trading Securities。未実現損益を当期損益へ。</p></div>
+    <div class="card"><h3>AFS</h3><div class="big green">OCI</div><p>Available-for-Sale。未実現損益は原則OCIへ。</p></div>
+  </div>
+
+  <h3>変更パターン早見表</h3>
+  <div class="table-wrap">
+  <table>
+    <thead><tr><th>変更</th><th>変更時の処理</th><th>覚え方</th></tr></thead>
+    <tbody>
+      <tr><td>HTM → TS</td><td><span class="pill">P/L</span> 償却原価と時価との差額</td><td>Tradingへ入るので損益</td></tr>
+      <tr><td>HTM → AFS</td><td><span class="pill green">OCI</span> 償却原価と時価との差額</td><td>AFSへ入るのでOCI</td></tr>
+      <tr><td>TS → HTM</td><td><span class="pill">P/L</span> 変更日までの評価差額</td><td>Trading中の損益は維持</td></tr>
+      <tr><td>TS → AFS</td><td><span class="pill">P/L</span> 変更日までの評価差額</td><td>変更後の変動は原則OCI</td></tr>
+      <tr><td>AFS → HTM</td><td><span class="pill green">AOCI維持</span> 残存期間で償却</td><td>AOCIを直ちに消さない</td></tr>
+      <tr><td>AFS → TS</td><td><span class="pill">P/L</span> AOCIを損益へ振替</td><td>蓄積したOCIをリサイクル</td></tr>
+    </tbody>
+  </table>
+  </div>
+
+  <div class="note good">
+    <strong>試験の核心：</strong>HTM → TS は P/L、HTM → AFS は OCI。
+    AFS → HTM は AOCIを残す。AFS → TS は AOCIをP/Lへ振り替える。
+  </div>
+  <p class="small">注：信用損失・税効果・HTMへの振替制限などの個別論点は省略。</p>
+</section>
+
+<section class="chapter" id="sec">
+  <div class="section-no">CHAPTER 03</div>
+  <h2>SEC提出期限</h2>
+  <p class="desc">Form 10-K（年次）とForm 10-Q（四半期）の基本期限。</p>
+  <div class="table-wrap">
+  <table>
+    <thead><tr><th>提出者区分</th><th>Public Floatの目安</th><th>10-K</th><th>10-Q</th></tr></thead>
+    <tbody>
+      <tr><td>Large Accelerated Filer</td><td>$700 million以上</td><td><strong>60日</strong></td><td><strong>40日</strong></td></tr>
+      <tr><td>Accelerated Filer</td><td>$75 million以上、$700 million未満</td><td><strong>75日</strong></td><td><strong>40日</strong></td></tr>
+      <tr><td>Non-accelerated Filer</td><td>原則、上記以外</td><td><strong>90日</strong></td><td><strong>45日</strong></td></tr>
+    </tbody>
+  </table>
+  </div>
+  <div class="note warn">
+    <strong>注意：</strong>区分はPublic Floatだけで決まりません。
+    売上高、報告実績、Smaller Reporting Companyの該当性など追加条件があります。
+    上表はFAR暗記用の簡略版です。
+  </div>
+</section>
+
+<section class="chapter" id="ratios">
+  <div class="section-no">CHAPTER 04</div>
+  <h2>財務比率・CVP分析</h2>
+  <p class="desc">Liquidity / Profitability / Efficiency / Leverage</p>
+
+  <h3>収益性・効率性</h3>
+  <div class="table-wrap">
+  <table>
+    <thead><tr><th>指標</th><th>公式</th><th>意味</th></tr></thead>
+    <tbody>
+      <tr><td>Profit Margin</td><td>Net Income ÷ Net Sales</td><td>売上に対する純利益</td></tr>
+      <tr><td>Operating Margin / ROS</td><td>Operating Income ÷ Net Sales</td><td>本業の利益率</td></tr>
+      <tr><td>Total Asset Turnover</td><td>Net Sales ÷ Average Total Assets</td><td>資産を使って売上を生む効率</td></tr>
+      <tr><td>ROA</td><td>Net Income ÷ Average Total Assets</td><td>総資産の収益性</td></tr>
+      <tr><td>ROE</td><td>Net Income ÷ Average Shareholders' Equity</td><td>株主資本の収益性</td></tr>
+      <tr><td>ROCE（普通株主資本利益率）</td><td>(Net Income − Preferred Dividends) ÷ Average Common Equity</td><td>普通株主に帰属する利益率</td></tr>
+      <tr><td>Equity Multiplier</td><td>Average Total Assets ÷ Average Shareholders' Equity</td><td>財務レバレッジ</td></tr>
+      <tr><td>Dividend Payout Ratio</td><td>Dividends ÷ Net Income</td><td>利益の配当割合</td></tr>
+    </tbody>
+  </table>
+  </div>
+
+  <h3>DuPont分析</h3>
+  <div class="formula">
+    ROE = Profit Margin × Asset Turnover × Equity Multiplier
+  </div>
+  <div class="flow">
+    <div class="step">純利益率</div><div class="arrow">×</div>
+    <div class="step">総資産回転率</div><div class="arrow">×</div>
+    <div class="step">財務レバレッジ</div><div class="arrow">=</div>
+    <div class="step">ROE</div>
+  </div>
+  <p class="small">ROEは「利益率」「資産効率」「レバレッジ」の3要因に分解できる。</p>
+
+  <h3>流動性・安全性</h3>
+  <div class="table-wrap">
+  <table>
+    <thead><tr><th>指標</th><th>公式</th></tr></thead>
+    <tbody>
+      <tr><td>Current Ratio</td><td>Current Assets ÷ Current Liabilities</td></tr>
+      <tr><td>Quick Ratio</td><td>(Cash + Short-term Marketable Securities + Net Receivables) ÷ Current Liabilities</td></tr>
+      <tr><td>Debt to Equity Ratio</td><td>Total Liabilities ÷ Total Shareholders' Equity</td></tr>
+      <tr><td>Times Interest Earned</td><td>EBIT ÷ Interest Expense</td></tr>
+      <tr><td>EBIT</td><td>Income Before Income Taxes + Interest Expense − Interest Income（通常の簡略計算）</td></tr>
+    </tbody>
+  </table>
+  </div>
+  <div class="note">
+    Quick Ratioは在庫や前払費用などを原則除外する。
+    「流動資産 − 棚卸資産」だけでは当座資産を正確に表せない場合がある。
+  </div>
+
+  <h3>回転率・日数・CCC</h3>
+  <div class="table-wrap">
+  <table>
+    <thead><tr><th>指標</th><th>公式</th></tr></thead>
+    <tbody>
+      <tr><td>Receivables Turnover</td><td>Net Credit Sales ÷ Average Net Accounts Receivable</td></tr>
+      <tr><td>Days Sales in Receivables</td><td>365 ÷ Receivables Turnover</td></tr>
+      <tr><td>Inventory Turnover</td><td>COGS ÷ Average Inventory</td></tr>
+      <tr><td>Days in Inventory</td><td>365 ÷ Inventory Turnover</td></tr>
+      <tr><td>Payables Turnover</td><td>Purchases ÷ Average Accounts Payable（概算でCOGSを使う場合あり）</td></tr>
+      <tr><td>Days Payable Outstanding</td><td>365 ÷ Payables Turnover</td></tr>
+    </tbody>
+  </table>
+  </div>
+  <div class="formula">CCC = Days in Inventory + Days Sales in Receivables − Days Payable Outstanding</div>
+  <p class="small">問題が360日基準を指定している場合は365日ではなく360日を使用する。</p>
+
+  <h3>CVP・損益分岐点</h3>
+  <div class="cards">
+    <div class="card"><h3>Contribution Margin</h3><div class="big">Sales − VC</div><p>売上から変動費を引いた限界利益。</p></div>
+    <div class="card"><h3>CM Ratio</h3><div class="big">CM ÷ Sales</div><p>売上1ドル当たりの限界利益率。</p></div>
+    <div class="card"><h3>Margin of Safety</h3><div class="big">Sales − BEP</div><p>損益分岐点を上回る売上余裕。</p></div>
+  </div>
+  <div class="formula">Operating Income = Sales − Variable Costs − Fixed Costs</div>
+  <div class="formula">BEP Sales ($) = Fixed Costs ÷ Contribution Margin Ratio</div>
+  <div class="formula">BEP Units = Fixed Costs ÷ Unit Contribution Margin</div>
+
+  <details>
+    <summary>比率の数学的な性質</summary>
+    <p>A/Bについて、AとBが正で、A−xとB−xも正の場合：</p>
+    <p>A/B ＞ 1なら、同額xを分子・分母から引くと比率は上がる。</p>
+    <p>A/B ＜ 1なら、同額xを引くと比率は下がる。</p>
+    <p class="small">分母が0以下になる場合などには、この説明をそのまま適用できない。</p>
+  </details>
+</section>
+
+<section class="chapter" id="inventory">
+  <div class="section-no">CHAPTER 05</div>
+  <h2>棚卸資産の評価</h2>
+  <p class="desc">FIFO / LIFO / NRV / Retail Method / Average Cost</p>
+
+  <h3>最重要：評価方法の使い分け</h3>
+  <div class="two">
+    <div class="card">
+      <h3>FIFO・平均法など</h3>
+      <div class="big green">Lower of Cost and NRV</div>
+      <p>取得原価と正味実現可能価額の低い方を採用。</p>
+    </div>
+    <div class="card">
+      <h3>LIFO・Retail Inventory Method</h3>
+      <div class="big blue">LCM</div>
+      <p>Costと、上限・下限のあるMarketを比較。</p>
+    </div>
+  </div>
+  <div class="note warn">
+    <strong>元メモを修正：</strong>US GAAPでは、FIFOに原則適用されるのはLCMではなく
+    <strong>Lower of Cost and NRV</strong>。
+    LIFOとRetail Inventory MethodにはLCMの枠組みが残る。
+  </div>
+
+  <h3>NRVとは？</h3>
+  <div class="formula">NRV = Estimated Selling Price − Costs of Completion − Costs of Disposal</div>
+  <p>商品を販売したとき、完成費用や処分費用を差し引いて回収できると見込まれる金額。</p>
+
+  <h3>LCMのMarket決定</h3>
+  <div class="table-wrap">
+  <table>
+    <thead><tr><th>条件</th><th>Marketとして採用</th></tr></thead>
+    <tbody>
+      <tr><td>Replacement Cost ＞ Ceiling</td><td>Ceiling（NRV）</td></tr>
+      <tr><td>Floor ≦ Replacement Cost ≦ Ceiling</td><td>Replacement Cost</td></tr>
+      <tr><td>Replacement Cost ＜ Floor</td><td>Floor（NRV − Normal Profit Margin）</td></tr>
+    </tbody>
+  </table>
+  </div>
+  <div class="formula">LCM = Lower of Cost or constrained Market</div>
+  <div class="note good">
+    <strong>覚える順番：</strong>
+    ① 再調達原価を確認 →
+    ② CeilingとFloorでMarketを制限 →
+    ③ CostとMarketの低い方を採用。
+  </div>
+
+  <h3>棚卸資産の原価計算</h3>
+  <div class="table-wrap">
+  <table>
+    <thead><tr><th>方法</th><th>計算・考え方</th></tr></thead>
+    <tbody>
+      <tr><td>Weighted Average</td><td>(期首在庫原価 + 当期仕入原価) ÷ (期首数量 + 当期仕入数量)</td></tr>
+      <tr><td>Moving Average</td><td>(購入直前の在庫原価 + 今回仕入原価) ÷ (購入直前の在庫数量 + 今回仕入数量)</td></tr>
+      <tr><td>Dollar-value LIFO</td><td>期末在庫を価格指数で基準年価格に換算し、増加分を新しいLIFO層として扱う</td></tr>
+    </tbody>
+  </table>
+  </div>
+  <div class="formula">Price Index = End-of-Year Cost ÷ Base-Year Cost</div>
+
+  <h3>Retail Inventory Method</h3>
+  <div class="flow">
+    <div class="step">売価ベース期末在庫</div><div class="arrow">×</div>
+    <div class="step">Cost-to-Retail Ratio</div><div class="arrow">=</div>
+    <div class="step">原価ベース期末在庫</div>
+  </div>
+  <div class="card">
+    <h3>計算例</h3>
+    <p>売価ベースの期末在庫：$520,000</p>
+    <p>Cost-to-Retail Ratio：64%</p>
+    <div class="formula">$520,000 × 64% = $332,800</div>
+    <p><strong>期末棚卸資産の見積原価：$332,800</strong></p>
+  </div>
+  <p class="small">Retail MethodにはConventional Retail Methodなどのバリエーションがあり、値下げの取扱いによって原価率が変わる。</p>
+</section>
+
+<section class="chapter" id="tax">
+  <div class="section-no">CHAPTER 06</div>
+  <h2>税効果会計｜DTA・DTL</h2>
+  <p class="desc">Deferred Tax Assets / Deferred Tax Liabilities</p>
+
+  <div class="cards">
+    <div class="card">
+      <h3>DTA</h3><div class="big green">将来の税金 ↓</div>
+      <p>将来の課税所得を減らす控除などによって、将来の税負担が軽くなる。</p>
+    </div>
+    <div class="card">
+      <h3>DTL</h3><div class="big red">将来の税金 ↑</div>
+      <p>将来の課税所得が増えるなどして、将来の税負担が重くなる。</p>
+    </div>
+    <div class="card">
+      <h3>永久差異</h3><div class="big amber">DTA / DTLなし</div>
+      <p>会計と税務の差が将来解消しない。</p>
+    </div>
+  </div>
+
+  <h3>帳簿価額とTax Basisの関係</h3>
+  <div class="table-wrap">
+  <table>
+    <thead><tr><th>対象</th><th>比較</th><th>将来の効果</th><th>結論</th></tr></thead>
+    <tbody>
+      <tr><td>資産</td><td>簿価 ＞ Tax Basis</td><td>将来課税が増える</td><td class="red">DTL</td></tr>
+      <tr><td>資産</td><td>簿価 ＜ Tax Basis</td><td>将来控除が増える</td><td class="green">DTA</td></tr>
+      <tr><td>負債</td><td>簿価 ＞ Tax Basis</td><td>将来控除が増える</td><td class="green">DTA</td></tr>
+      <tr><td>負債</td><td>簿価 ＜ Tax Basis</td><td>将来課税が増える</td><td class="red">DTL</td></tr>
+    </tbody>
+  </table>
+  </div>
+  <p class="small">基本的な一時差異の判断表。税法上の取扱いによってTax Basisの設定は変わる。</p>
+
+  <h3>典型パターン</h3>
+  <div class="table-wrap">
+  <table>
+    <thead><tr><th>項目</th><th>何が起きるか</th><th>結論</th></tr></thead>
+    <tbody>
+      <tr><td>税務上の減価償却が会計より大きい</td><td>税務上の費用を先取り</td><td class="red">DTL</td></tr>
+      <tr><td>会計上の収益を税務より先に認識</td><td>将来課税される</td><td class="red">DTL</td></tr>
+      <tr><td>税務で先に控除される前払費用</td><td>将来、会計費用だけが発生</td><td class="red">DTL</td></tr>
+      <tr><td>製品保証引当金</td><td>税務控除が将来になる</td><td class="green">DTA</td></tr>
+      <tr><td>貸倒引当金</td><td>実際の貸倒時に税務控除</td><td class="green">DTA</td></tr>
+      <tr><td>未払賞与・未払休暇</td><td>支払時に税務控除される場合</td><td class="green">DTA</td></tr>
+      <tr><td>未払訴訟損失</td><td>支払時に税務控除される場合</td><td class="green">DTA</td></tr>
+      <tr><td>前受収益が税務上先に課税</td><td>将来の会計収益に対応する税負担が軽くなる</td><td class="green">DTA</td></tr>
+      <tr><td>NOL Carryforward</td><td>将来の課税所得と相殺可能</td><td class="green">DTA</td></tr>
+      <tr><td>Tax Credit Carryforward</td><td>将来の税額を直接減額</td><td class="green">DTA</td></tr>
+    </tbody>
+  </table>
+  </div>
+  <div class="note warn">
+    <strong>前払費用の注意：</strong>税務で支払時に全額控除し、
+    会計では資産として残っている場合は、通常DTL。
+    ただし「前払費用なら常にDTL」ではなく、Tax Basisを確認する。
+    またDTAは回収可能性に応じてValuation Allowanceを検討する。
+  </div>
+
+  <h3>永久差異</h3>
+  <div class="table-wrap">
+  <table>
+    <thead><tr><th>項目</th><th>会計</th><th>税務の典型例</th></tr></thead>
+    <tbody>
+      <tr><td>罰金・罰則金</td><td>費用</td><td>永久に損金不算入</td></tr>
+      <tr><td>会社が受取人の生命保険料</td><td>費用</td><td>原則、損金不算入</td></tr>
+      <tr><td>会社が受取人の生命保険金</td><td>収益</td><td>原則、非課税</td></tr>
+      <tr><td>Municipal Bond Interest</td><td>受取利息</td><td>通常、連邦所得税では非課税</td></tr>
+    </tbody>
+  </table>
+  </div>
+  <div class="note good">
+    <strong>判定の順序：</strong>① 将来戻る差か？ →
+    ② 将来税金が増えるか減るか？ →
+    ③ DTLかDTAかを判断する。
+  </div>
+</section>
+
+<section class="chapter" id="corrections">
+  <div class="section-no">REFERENCE / QUALITY CHECK</div>
+  <h2>元メモから修正した重要事項</h2>
+  <div class="table-wrap">
+  <table>
+    <thead><tr><th>論点</th><th>修正・補足</th></tr></thead>
+    <tbody>
+      <tr><td>FIFOの評価</td><td>原則Lower of Cost and NRV。LCMとは区別。</td></tr>
+      <tr><td>Asset Turnover</td><td>Net Sales ÷ Average Total Assets。Net Incomeではない。</td></tr>
+      <tr><td>社債利息</td><td>現金利息の支払と、Premium/Discount償却を区別。</td></tr>
+      <tr><td>Deferred TaxのCF調整</td><td>DTA/DTLの残高増減を機械的に調整しない。</td></tr>
+      <tr><td>SEC Filer区分</td><td>Public Floatだけでなく追加条件を確認。</td></tr>
+      <tr><td>Quick Ratio</td><td>流動資産から棚卸資産を引くだけでは不十分な場合がある。</td></tr>
+      <tr><td>365日 / 360日</td><td>問題文の指定に合わせて使い分ける。</td></tr>
+      <tr><td>AFS → HTM</td><td>AOCIを即時消去せず、残存期間にわたり償却。</td></tr>
+    </tbody>
+  </table>
+  </div>
+  <p class="small">
+    本資料はUSCPA FARの復習用要約です。
+    複雑な例外、税効果、信用損失、SECの細かな適用要件などは省略しています。
+  </p>
+</section>
+
+<footer>USCPA FAR — Personal Study Reference / HTML Edition</footer>
+</main>
+
+<script>
+const search=document.getElementById("search");
+const sections=[...document.querySelectorAll("section.chapter")];
+search.addEventListener("input",()=>{
+  const q=search.value.trim().toLowerCase();
+  sections.forEach(s=>{
+    s.style.display=(!q||s.textContent.toLowerCase().includes(q))
+      ?"block":"none";
+  });
+});
+const links=[...document.querySelectorAll(".sidebar a")];
+links.forEach(link=>{
+  link.addEventListener("click",()=>{
+    search.value="";
+    sections.forEach(s=>s.style.display="block");
+    links.forEach(a=>a.classList.remove("active"));
+    link.classList.add("active");
+  });
+});
+</script>
+</body>
+</html>
