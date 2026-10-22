@@ -5,7 +5,7 @@
 <head>
 <meta charset="utf-8"/>
 <meta content="width=device-width,initial-scale=1" name="viewport"/>
-<title>USCPA FAR | Study Guide</title>
+<title>USCPA FAR｜統合完全版・15項目・連結会計</title>
 <style>
 :root{
   --bg:#f3f6fb;--paper:#fff;--ink:#17243a;--muted:#65758c;
@@ -90,6 +90,8 @@ body{background:white}
 section.chapter{break-before:page;border:0;border-radius:0;padding:15px}
 details{break-inside:avoid}
 }
+
+#priority-table td:first-child{font-weight:900;color:var(--blue);width:64px}#priority-table td:nth-child(2){font-weight:700;min-width:170px}#consolidation .card{min-width:0}#consolidation .formula{white-space:normal}#consolidation .flow{gap:8px} @media(max-width:720px){#priority-table table{min-width:650px}}
 </style>
 <style>
 .guide .topic{background:#fff;border:1px solid var(--line);border-radius:14px;padding:24px;margin:16px 0;box-shadow:0 5px 18px rgba(18,36,60,.035)}
@@ -115,7 +117,7 @@ details{break-inside:avoid}
 <a href="#inventory">05　棚卸資産</a>
 <a href="#tax">06　税効果会計</a>
 <a href="#corrections">重要な修正点</a>
-<a href="#master">07　重点暗記15項目</a><a href="#review">08　重点復習</a><a href="#checks-section">09　理解度チェック</a><a href="#quiz-section">10　セルフテスト</a><a href="#study-plan">11　復習計画</a></nav>
+<a href="#priority-table">07　最優先15項目一覧</a><a href="#consolidation">08　連結会計・企業結合</a><a href="#master">07　重点暗記15項目</a><a href="#review">08　重点復習</a><a href="#checks-section">09　理解度チェック</a><a href="#quiz-section">10　セルフテスト</a><a href="#study-plan">11　復習計画</a></nav>
 <main>
 <header class="hero">
 <div class="kicker">USCPA / FAR / MASTER REFERENCE</div>
@@ -477,7 +479,18 @@ details{break-inside:avoid}
     複雑な例外、税効果、信用損失、SECの細かな適用要件などは省略しています。
   </p>
 </section>
-<footer>USCPA FAR — Personal Study Reference / HTML Edition</footer><section class="chapter guide" id="master"><div class="section-no">FAR / MEMORY GUIDE</div><h2>最優先15項目</h2>
+<footer>USCPA FAR — Personal Study Reference / HTML Edition</footer><section class="chapter" id="priority-table"><div class="section-no">MEMORY / QUICK REFERENCE</div><h2>最優先で暗記すべき15項目｜一覧表</h2><p class="desc">指定された15項目の判定ルールをすべて収録。項目名から詳細解説へ移動できます。</p><div class="table-wrap"><table><thead><tr><th>優先</th><th>論点</th><th>暗記すべきルール</th></tr></thead><tbody><tr><td><strong>1</strong></td><td><a href="#t1">AFS・Trading・HTM</a></td><td>Trading＝FV変動はNI、AFS負債証券＝原則OCI、HTM＝償却原価</td></tr><tr><td><strong>2</strong></td><td><a href="#t2">持分法</a></td><td>原則、重要な影響力があれば持分法。被投資会社の利益で投資勘定増加、配当で減少</td></tr><tr><td><strong>3</strong></td><td><a href="#t3">連結・企業結合</a></td><td>取得日に識別可能純資産をFV評価。Goodwill＝対価等－識別可能純資産FV</td></tr><tr><td><strong>4</strong></td><td><a href="#t4">段階取得</a></td><td>支配獲得時に既存持分をFVで再測定し、差額を損益認識</td></tr><tr><td><strong>5</strong></td><td><a href="#t5">税効果</a></td><td>DTA＝将来の税負担減少、DTL＝将来の税負担増加</td></tr><tr><td><strong>6</strong></td><td><a href="#t6">収益認識</a></td><td>5ステップ。現金受領とRevenue認識は別</td></tr><tr><td><strong>7</strong></td><td><a href="#t7">CF間接法</a></td><td>流動資産増加＝減算、流動負債増加＝加算（営業項目）</td></tr><tr><td><strong>8</strong></td><td><a href="#t8">CF分類</a></td><td>利息・配当受取＝原則Operating、株式・債券購入＝Investing</td></tr><tr><td><strong>9</strong></td><td><a href="#t9">FOB Shipping Point</a></td><td>出荷時に所有権移転。未着でも買主の棚卸資産</td></tr><tr><td><strong>10</strong></td><td><a href="#t10">社債実効金利法</a></td><td>Interest Expense＝期首帳簿価額×実効金利</td></tr><tr><td><strong>11</strong></td><td><a href="#t11">減価償却</a></td><td>定額法では残存価額を控除。通常の定率法では毎期の計算基礎から残存価額を控除しない</td></tr><tr><td><strong>12</strong></td><td><a href="#t12">貸倒引当金</a></td><td>必要な期末引当金残高と当期の貸倒費用は異なる</td></tr><tr><td><strong>13</strong></td><td><a href="#t13">後発事象</a></td><td>決算日時点の状況を裏付ける＝修正。決算後の新事象＝原則非修正</td></tr><tr><td><strong>14</strong></td><td><a href="#t14">NFP寄付金</a></td><td>寄付者の制約あり・なしを区別。長期目的の寄付金受領は財務CF</td></tr><tr><td><strong>15</strong></td><td><a href="#t15">Fair Value Hierarchy</a></td><td>Level 1＝同一資産の活発な市場価格、2＝その他の観察可能情報、3＝重要な観察不能情報</td></tr></tbody></table></div><div class="note warn">表は暗記用の基本則です。例外・適用条件は各項目の詳細解説を確認してください。特に「流動資産・流動負債」は営業項目に限定されます。</div></section><section class="chapter" id="consolidation"><div class="section-no">DEEP DIVE / CONSOLIDATION</div><h2>連結会計・企業結合｜完全復習章</h2><p class="desc">支配の判定から取得法、非支配持分、内部取引の相殺消去まで。個別財務諸表の単純合算と連結修正を区別する。</p>
+<div class="cards"><div class="card"><h3>支配（Control）</h3><div class="big blue">連結の入口</div><p>原則、議決権の過半数などにより支配する企業を連結。VIEなど別の支配モデルにも注意。</p></div><div class="card"><h3>取得法</h3><div class="big green">取得日FV</div><p>取得日の識別可能資産・負債を公正価値で認識し、Goodwillを計算。</p></div><div class="card"><h3>連結消去</h3><div class="big">グループ内を消す</div><p>親子間取引・債権債務・投資と資本を連結ワークシート上で相殺。</p></div></div>
+<h3>01｜企業結合とGoodwill</h3><div class="formula">Goodwill = 移転対価 + NCIの公正価値 + 既保有持分の公正価値 − 識別可能純資産の公正価値</div><p><strong>例：</strong>80%取得の移転対価800、非支配持分FV200、子会社の識別可能純資産FV900なら、Goodwill＝800＋200−900＝100。取得対価に弁護士費用などの取得関連費用を原則含めず、費用処理する。</p>
+<h3>02｜投資と資本の相殺消去</h3><p>親会社の「子会社株式」と、子会社の取得日資本を連結上で相殺する。取得日純資産の帳簿価額とFVとの差は資産・負債の評価差額として認識する。</p><div class="table-wrap"><table><tr><th>連結ワークシート上の典型的な方向</th><th>借方</th><th>貸方</th></tr><tr><td>取得日の資本相殺（概念例）</td><td>子会社資本、識別可能資産のFV増額、Goodwill</td><td>子会社株式、識別可能負債のFV増額、NCI</td></tr></table></div><div class="note warn">上記は構造を示す概念仕訳です。実際の仕訳は取得日残高、FV差額、持分比率、NCIの評価額により変わります。</div>
+<h3>03｜非支配持分（NCI）</h3><div class="formula">期末NCI = 期首NCI + NCI帰属利益 − NCIへの配当 ± NCI帰属OCI等</div><p><strong>例：</strong>期首NCI 200、子会社利益100、親会社持分80%、子会社配当40、OCIなしの場合、期末NCI＝200＋20−8＝212。NCIは連結貸借対照表の<strong>資本</strong>に表示し、親会社株主持分と区分する。</p>
+<h3>04｜親子間の債権債務・売上仕入</h3><div class="table-wrap"><table><tr><th>取引</th><th>連結修正の考え方</th></tr><tr><td>親会社の売掛金100／子会社の買掛金100</td><td>借方：買掛金100 ／ 貸方：売掛金100</td></tr><tr><td>親会社から子会社へ商品を150で販売</td><td>連結上の内部売上150と対応する仕入・売上原価150を消去</td></tr><tr><td>親子間の利息・貸付金</td><td>貸付金と借入金、受取利息と支払利息を相殺</td></tr><tr><td>親子間配当</td><td>連結上の内部配当を消去し、NCI帰属分は区別</td></tr></table></div>
+<h3>05｜棚卸資産の未実現利益消去</h3><p>グループ外に売れていない商品に含まれる内部利益は、連結上まだ実現していない。</p><div class="formula">未実現利益 = 期末に残る内部販売商品の内部販売価格 × 売上総利益率（販売価格基準）</div><p><strong>例：</strong>親会社の原価100の商品を子会社に150で販売し、子会社が全量を期末保有。連結上の棚卸資産は150ではなく100。内部利益50を消去する。翌期に外部販売されたときは前期消去した利益を実現させる。</p><div class="note">上流取引（子→親）では、未実現利益消去が子会社利益に関係するためNCIへの影響を検討。下流取引（親→子）と区別する。</div>
+<h3>06｜固定資産の内部売買と減価償却修正</h3><p><strong>例：</strong>帳簿価額80の機械をグループ内で100で売却し、残存耐用年数4年、残存価額0とする。内部売却益20を消去し、買主が計上した年間償却25と連結上の償却20の差5を修正する。</p><div class="formula">内部利益消去 20 ／ 当期の過大償却修正 20 ÷ 4 = 5</div><p>連結ではグループ内売買がなかった状態の帳簿価額と償却費へ戻す。</p>
+<h3>07｜段階取得と支配喪失</h3><div class="two"><div class="card"><h3>支配獲得</h3><p>以前の保有持分を支配獲得日のFVで再測定し、差額を原則損益へ。既保有持分FVもGoodwill計算に含める。</p></div><div class="card"><h3>支配喪失</h3><p>子会社資産・負債・NCIを除外し、残存持分をFVで測定。処分対価等と合わせて損益を計算する。</p></div></div>
+<h3>08｜連結TBSの解答手順</h3><div class="flow"><div class="step">① 支配の有無</div><div class="arrow">→</div><div class="step">② 取得日・持分比率</div><div class="arrow">→</div><div class="step">③ FV・Goodwill</div><div class="arrow">→</div><div class="step">④ 内部取引消去</div><div class="arrow">→</div><div class="step">⑤ NCI計算</div></div>
+<h3>理解確認</h3><details><summary>Q｜原価100の商品を150で子会社へ売り、期末に60%が残った。未実現利益は？</summary><p><strong>答え：30。</strong>内部利益総額50 × 未販売割合60% = 30。</p></details><details><summary>Q｜80%子会社の利益が100、配当が40。NCIの利益と配当は？</summary><p><strong>答え：</strong>NCI帰属利益20、NCIへの配当8。</p></details><details><summary>Q｜取得日FV純資産900、移転対価800、NCI FV200。Goodwillは？</summary><p><strong>答え：100。</strong>800＋200−900。</p></details>
+</section><section class="chapter guide" id="master"><div class="section-no">FAR / MEMORY GUIDE</div><h2>最優先15項目</h2>
 <article class="topic" id="t1"><div class="topic-head"><div class="num">01</div><div><h3>Trading・AFS・HTMの評価差額</h3><p class="sub">Financial Instruments｜分類と損益の行き先</p></div></div><div class="rule">Trading：FV変動→NI ／ AFS負債証券：原則OCI ／ HTM：償却原価</div><div class="cols"><div><h4>例</h4><p>取得原価$1,000の債券が期末に$1,100となった場合、Tradingなら原則$100を当期損益、AFSなら原則$100をOCIに計上。HTMは市場価格だけでは評価替えしない。</p></div><div><h4>見分ける言葉</h4><p>Trading / Available-for-sale / Held-to-maturity。まず<strong>負債証券か持分証券か</strong>を確認する。</p></div></div><div class="trap">注意：通常の持分証券はAFS・HTMの分類ではなく、原則FV変動をNIに認識する。AFS債券でも信用損失などは別途検討。</div></article>
 <article class="topic" id="t2"><div class="topic-head"><div class="num">02</div><div><h3>持分法（Equity Method）</h3><p class="sub">投資先の利益と配当は逆方向</p></div></div><div class="rule">投資先の利益 → 投資勘定が増える ／ 配当 → 投資勘定が減る</div><p>重要な影響力がある場合に原則適用。議決権20〜50%は目安であり、絶対条件ではない。</p><div class="formula">投資残高 = 期首残高 + 持分利益 − 受取配当 ± その他の調整</div><p><strong>例：</strong>30%保有、投資先利益$100,000、配当総額$20,000なら、持分利益$30,000を認識し、配当$6,000で投資勘定を減額。</p><div class="trap">注意：配当を新たな配当収益として二重計上しない。</div></article>
 <article class="topic" id="t3"><div class="topic-head"><div class="num">03</div><div><h3>企業結合・Goodwill</h3><p class="sub">取得日・公正価値・非支配持分</p></div></div><div class="rule">取得日に識別可能な資産・負債を原則FVで認識し、残額をGoodwillとして計算</div><div class="formula">Goodwill = 移転対価 + 非支配持分FV + 既保有持分FV − 識別可能純資産FV</div><p><strong>例：</strong>100%取得、対価$800、識別可能純資産FV$650ならGoodwillは$150。</p><div class="trap">注意：取得関連費用は原則費用処理。持分取得割合だけを機械的に純資産へ掛けてGoodwillを計算しない。</div></article>
@@ -501,7 +514,6 @@ details{break-inside:avoid}
 <details class="quiz"><summary>Q5｜NFPが設備購入目的の寄付$200,000を現金で受領。CF区分は？</summary><div class="answer"><strong>答え：</strong>Financing CF。設備を実際に購入する取引はInvesting CF。</div></details>
 </section><section class="chapter guide" id="study-plan"><div class="section-no">FAR / MEMORY GUIDE</div><h2>復習の優先順位</h2><div class="table-wrap"><table><tr><th>段階</th><th>対象</th><th>完了条件</th></tr><tr><td>第1段階</td><td>15ルールの即答</td><td>用語を見て5秒以内に処理を説明</td></tr><tr><td>第2段階</td><td>CF・金融商品・NFP</td><td>理由付きで選択肢を判別できる</td></tr><tr><td>第3段階</td><td>社債・引当金・企業結合</td><td>数字を変えても仕訳を再現できる</td></tr><tr><td>第4段階</td><td>TBS横断演習</td><td>資料から条件を抽出し、仕訳と表示先を決められる</td></tr></table></div></section>
 </main>
-
 <script>
 const items=[['Trading・AFS・HTMの評価差額の行き先を言える','t1'],['持分法で利益と配当が投資残高へ与える影響を言える','t2'],['Goodwillの構成要素を言える','t3'],['段階取得で再測定する条件を言える','t4'],['DTAとDTLの方向を判断できる','t5'],['収益認識5ステップを言える','t6'],['間接法の運転資本増減の符号を言える','t7'],['利息・配当受取と投資資産購入のCF分類を言える','t8'],['FOB Shipping Pointの期末処理を言える','t9'],['社債の利息費用と現金利息を区別できる','t10'],['定額法と定率法の残存価額の扱いを言える','t11'],['貸倒引当金の追加計上額を計算できる','t12'],['修正後発事象の判定条件を言える','t13'],['NFP寄付金の制約とCF分類を判断できる','t14'],['FVのLevel 1〜3とNAV簡便法を区別できる','t15']];
 const root=document.getElementById('checks');items.forEach((x,i)=>{const l=document.createElement('label');l.className='check';const c=document.createElement('input');c.type='checkbox';c.addEventListener('change',updateProgress);const s=document.createElement('span');s.textContent=String(i+1).padStart(2,'0')+'　'+x[0];const link=document.createElement('a');link.href='#'+x[1];link.textContent='解説へ';link.style.fontSize='12px';l.append(c,s,link);root.append(l)});
