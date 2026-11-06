@@ -1,217 +1,93 @@
-
-<!DOCTYPE html>
-<html lang="ja">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<title>FAR 弱点克服・暗記ノート</title>
+<!doctype html><html lang="ja"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>FAR Chapter 14｜連結財務諸表 完全理解ガイド</title>
 <style>
-:root{--bg:#0c1220;--panel:#172235;--line:#34445d;--text:#e9eff8;--muted:#a8b8cc;--accent:#80d9d1;--amber:#ffd28b}
-*{box-sizing:border-box}
-body{margin:0;background:var(--bg);color:var(--text);font:15px/1.8 -apple-system,BlinkMacSystemFont,"Noto Sans JP",sans-serif}
-header,main,footer{max-width:950px;margin:auto;padding:24px}
-header{padding-top:52px}
-h1{font-size:clamp(26px,5vw,42px);line-height:1.3;margin:8px 0}
-h2{font-size:22px;margin:0 0 15px}
-h3{font-size:17px;margin:22px 0 8px;color:var(--accent)}
-p{margin:8px 0 14px}
-small,.muted{color:var(--muted)}
-.tag{color:var(--accent);font-weight:700;letter-spacing:.08em}
-.summary{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin:24px 0}
-.metric{background:var(--panel);padding:18px;border-radius:12px}
-.metric b{display:block;font-size:27px}
-section{background:var(--panel);padding:24px;margin:18px 0;border:1px solid var(--line);border-radius:16px}
-.priority{font-size:12px;color:var(--amber);font-weight:700}
-.formula{background:#0b1728;border-left:3px solid var(--accent);padding:13px 15px;margin:12px 0;overflow-wrap:anywhere}
-table{border-collapse:collapse;width:100%;font-size:14px}
-th,td{padding:11px;border-bottom:1px solid var(--line);text-align:left;vertical-align:top}
-th{color:var(--accent)}
-strong{color:#fff}
-details{border-top:1px solid var(--line);padding:12px 0}
-summary{cursor:pointer;font-weight:600}
-nav{display:flex;flex-wrap:wrap;gap:8px}
-nav a{border:1px solid var(--line);border-radius:20px;padding:5px 12px;color:var(--text);text-decoration:none}
-.check{display:block;padding:8px 0}
-input{accent-color:var(--accent)}
-@media(max-width:600px){header,main,footer{padding:16px}section{padding:18px}.summary{gap:6px}.metric{padding:10px}.metric b{font-size:21px}table{font-size:12px}th,td{padding:7px}}
-</style>
-</head>
-<body>
-<header>
-<div class="tag">USCPA / FAR / EVIDENCE-BASED REVIEW</div>
-<h1>弱点克服・暗記ノート</h1>
-<p>過去の解答記録と質問履歴から作成。最短合格を目的として、公式・判定条件・ひっかけを優先。</p>
-<div class="summary">
-<div class="metric"><b>48</b><small>M19記録問題数</small></div>
-<div class="metric"><b>30</b><small>正解数</small></div>
-<div class="metric"><b>15</b><small>不正解数</small></div>
-</div>
-<p class="muted">ほかに部分正解3問。正解率62.5%（完全正解ベース）。この数値はM19の記録に限り、FAR全体の実力を表すものではありません。</p>
-<nav>
-<a href="#cvp">CVP</a><a href="#ratios">財務比率</a>
-<a href="#bonds">社債</a><a href="#exchange">資産交換</a>
-<a href="#government">政府会計</a><a href="#nfp">NFP</a>
-<a href="#quiz">確認テスト</a>
-</nav>
-</header>
-<main>
-<section id="cvp">
-<div class="priority">優先度 S｜誤答が集中</div>
-<h2>01. CVP・損益分岐点</h2>
-<p><strong>根拠：</strong>M19-10の応用問題で16問中7問を誤答。特に逆算問題を優先する。</p>
-<div class="formula">
-限界利益 CM = 売上高 − 変動費<br>
-単位当たりCM = 販売単価 − 単位当たり変動費<br>
-CM率 = CM ÷ 売上高<br>
-損益分岐点売上高 = 固定費 ÷ CM率<br>
-目標利益達成売上高 = (固定費＋目標営業利益) ÷ CM率
-</div>
-<h3>最重要：利益率の分母を確認</h3>
-<p>「売上高の15%を利益にする」と「原価の15%を上乗せする」は異なる。</p>
-<div class="formula">
-売上高利益率15%：売価 = 原価 ÷ 0.85<br>
-原価マークアップ15%：売価 = 原価 × 1.15
-</div>
-<p><strong>例：</strong>総原価$990,000、500個販売、売上高利益率15%なら、単価 = $990,000 ÷ 500 ÷ 0.85 ≒ <strong>$2,329</strong>。</p>
-<p>ひっかけ：目標利益が「売上高に対する割合」なのに原価に15%を掛けてしまう。</p>
-</section>
+:root{--ink:#17283b;--muted:#56677a;--blue:#175eaa;--pale:#eaf3fc;--line:#dce5ee;--bg:#f6f8fb;--good:#e8f6ef;--warn:#fff4df}*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--bg);color:var(--ink);font-family:-apple-system,BlinkMacSystemFont,"Hiragino Kaku Gothic ProN","Noto Sans JP",sans-serif;line-height:1.85;font-size:16px}header{background:linear-gradient(120deg,#102b4c,#1764a8);color:white;padding:60px max(22px,calc((100vw - 1050px)/2)) 48px}header h1{font-size:clamp(30px,5vw,52px);line-height:1.3;margin:12px 0}header p{max-width:800px;color:#e3efff}.eyebrow{letter-spacing:.13em;font-size:12px;font-weight:700}main{max-width:1100px;margin:auto;padding:24px;display:grid;grid-template-columns:235px minmax(0,1fr);gap:25px}nav{position:sticky;top:16px;align-self:start;background:white;border:1px solid var(--line);border-radius:15px;padding:18px;max-height:90vh;overflow:auto}nav a{display:block;color:#34516c;text-decoration:none;padding:7px 5px;font-size:13px;border-bottom:1px solid #edf0f5}nav a:hover{color:var(--blue)}article{min-width:0}.section{background:white;border:1px solid var(--line);border-radius:17px;margin-bottom:22px;padding:clamp(20px,4vw,38px);box-shadow:0 3px 14px #1d355008}h2{font-size:clamp(23px,3vw,31px);line-height:1.4;margin:0 0 22px;border-bottom:2px solid #e6eef6;padding-bottom:12px}h3{font-size:20px;margin:28px 0 8px;color:#164d80}h4{margin:18px 0 6px}p{margin:10px 0 16px}strong{color:#0c508e}.lead{font-size:19px;font-weight:650}.call{background:var(--pale);border-left:4px solid var(--blue);padding:15px 19px;border-radius:8px;margin:18px 0}.warn{background:var(--warn);border-left:4px solid #d28b1e;padding:14px 18px;border-radius:8px;margin:18px 0}.good{background:var(--good);border-left:4px solid #249166;padding:14px 18px;border-radius:8px;margin:18px 0}.scroll{overflow-x:auto}table{width:100%;border-collapse:collapse;font-size:14px;margin:15px 0;min-width:480px}th,td{border:1px solid #dce5ed;padding:10px 12px;text-align:left;vertical-align:top}th{background:#eaf2fa;color:#17466e}pre{overflow:auto;background:#132a43;color:#e8f3ff;border-radius:10px;padding:17px;font-size:14px;line-height:1.65}code{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace}.formula{font-size:18px;font-weight:700;background:#f1f6fc;padding:15px;border-radius:9px;overflow:auto}.steps{counter-reset:step;list-style:none;padding:0}.steps li{counter-increment:step;margin:12px 0;padding-left:45px;position:relative}.steps li:before{content:counter(step);position:absolute;left:0;top:2px;border-radius:50%;background:#1a67ad;color:white;width:28px;height:28px;display:grid;place-items:center;font-weight:700}.diagram{display:flex;gap:14px;justify-content:center;align-items:center;flex-wrap:wrap;background:#f4f8fd;padding:25px;border-radius:12px;margin:18px 0}.node{padding:15px 20px;background:white;border:2px solid #aac9e6;border-radius:10px;text-align:center;min-width:145px}.arrow{font-size:27px;color:#1764a8}.small{font-size:13px;color:var(--muted)}details{border:1px solid #d9e5f0;border-radius:10px;padding:12px 16px;margin:12px 0}summary{cursor:pointer;font-weight:700;color:#175e9a}.pill{display:inline-block;background:#eaf3ff;color:#14558e;border-radius:99px;font-size:12px;padding:3px 9px;margin:2px}.quiz{background:#f7fafe;border:1px solid #dce9f7;padding:17px;border-radius:11px;margin:15px 0}.quiz button{display:block;margin:7px 0;padding:10px 12px;border:1px solid #bfd4e8;background:white;border-radius:7px;text-align:left;width:100%;cursor:pointer;color:#193e62}.quiz button:hover{background:#eaf3fc}.quiz .result{font-weight:700;margin-top:8px}.footer{font-size:13px;color:#687889;text-align:center;padding:20px}@media(max-width:780px){main{display:block;padding:13px}nav{position:static;max-height:none;margin-bottom:17px}nav .links{display:grid;grid-template-columns:1fr 1fr;gap:3px}nav a{font-size:12px}header{padding:37px 21px}.section{padding:20px 16px}table{font-size:13px}pre{font-size:12px}.diagram{padding:12px}.node{min-width:110px;padding:10px}}@media print{nav{display:none}main{display:block}.section{break-inside:avoid;box-shadow:none}header{background:white;color:black;padding:10px}details>*{display:block}}
+</style></head><body>
+<header><div class="eyebrow">USCPA FAR / ABITUS / CHAPTER 14</div><h1>連結財務諸表<br>完全理解ガイド</h1><p>企業結合・取得法・非支配持分・連結修正仕訳・内部取引・固定資産・社債・配当・開示まで。講義の全テーマを「理由→計算→仕訳→解法」の順に整理。</p><span class="pill">取得法</span><span class="pill">NCI</span><span class="pill">未実現利益</span><span class="pill">連結消去</span><span class="pill">FAR試験対策</span></header>
+<main><nav><b>目次</b><div class="links">
+<a href="#s0">00 全体像と学び方</a><a href="#s1">01 企業結合とASC 805</a><a href="#s2">02 取得法の5ステップ</a><a href="#s3">03 100%取得の連結</a><a href="#s4">04 非支配持分（NCI）</a><a href="#s5">05 取得後の連結</a><a href="#s6">06 内部売上・債権債務</a><a href="#s7">07 棚卸資産：全部残存</a><a href="#s8">08 棚卸資産：全部売却</a><a href="#s9">09 棚卸資産：一部残存</a><a href="#s10">10 固定資産の内部売却</a><a href="#s11">11 社債の内部保有</a><a href="#s12">12 配当の消去</a><a href="#s13">13 NCIの表示・開示</a><a href="#s14">14 頻出ミスと初見解法</a><a href="#s15">15 総合演習・解答</a><a href="#s16">16 暗記シート</a><a href="#sources">資料と注記</a></div></nav><article>
+<section class="section" id="s0"><h2>00｜まず全体像：連結とは何をするのか</h2><p class="lead">連結財務諸表は、親会社と子会社を「1つの経済主体」として見せるための財務諸表。</p><div class="diagram"><div class="node">親会社 P<br><small>個別B/S・P/L</small></div><div class="arrow">＋</div><div class="node">子会社 S<br><small>個別B/S・P/L</small></div><div class="arrow">−</div><div class="node">内部取引<br><small>投資・売上・債権など</small></div><div class="arrow">＝</div><div class="node"><strong>連結財務諸表</strong><br><small>外部との経済実態</small></div></div><p>例：P社がS社に商品を100ドルで売っても、グループ全体では商品が「右ポケットから左ポケットへ移動」しただけ。外部顧客に売れていないなら、グループの売上も利益も発生していません。</p><div class="call"><strong>Chapter 14の大原則は2つ。</strong><br>① 取得時：子会社の資産・負債を取得日公正価値で捉え、親の投資と子の取得日前資本を消去する。<br>② 取得後：グループ内部の取引・債権債務・未実現損益を消去する。</div><p><b>前提となる知識：</b>B/Sの資産・負債・純資産、P/Lの収益・費用、仕訳、社債、減価償却。わからない箇所があれば、その元の単元へ戻ると理解しやすくなります。</p></section>
+<section class="section" id="s1"><h2>01｜企業結合（Business Combination）</h2><p>講義冒頭のテーマ。米国会計基準の中心は <strong>ASC 805</strong>。企業結合とは、取得者が1つ以上の「事業（business）」に対する支配を獲得する取引・事象です。</p><h3>事業を買う vs 単なる資産を買う</h3><div class="scroll"><table><tr><th>取引</th><th>意味</th><th>会計上の視点</th></tr><tr><td>Business combination</td><td>事業の支配を取得</td><td>取得法、原則としてのれん・割安購入益を検討</td></tr><tr><td>Asset acquisition</td><td>事業に該当しない資産の取得</td><td>通常、取得原価を資産に配分。のれんを同様には認識しない</td></tr></table></div><p>土地1筆だけを買うのと、設備・人材・プロセスを備えた稼働中の事業を買うのは違います。<strong>「会社の株式を買ったか」だけでなく「取得対象が事業か」</strong>が重要です。</p><h3>吸収合併と株式取得</h3><div class="scroll"><table><tr><th>吸収合併（Merger）</th><th>株式取得（Acquisition of shares）</th></tr><tr><td>被合併会社の法人格が消滅し、存続会社に資産・負債を引き継ぐ</td><td>親会社と子会社が別法人として存続。連結財務諸表で一体表示</td></tr></table></div><h3>2つの考え方</h3><p><strong>親会社概念</strong>は親会社株主を中心に考える立場。<strong>経済的単一体概念（Economic entity concept）</strong>は親会社株主と非支配株主を含むグループ全体を一つの主体として捉えます。米国の現行連結会計では後者が基本です。</p><div class="good">だから非支配持分（NCI）は「負債」ではなく、連結B/Sの<strong>純資産（Equity）</strong>に表示します。</div></section>
+<section class="section" id="s2"><h2>02｜取得法（Acquisition Method）</h2><ol class="steps"><li><strong>取得者（Acquirer）</strong>を識別する</li><li><strong>取得日（Acquisition date）</strong>を決定する＝支配獲得日</li><li><strong>取得対価（Consideration transferred）</strong>を測定する</li><li>取得した<strong>識別可能資産・引受負債・NCI</strong>を認識・測定する</li><li><strong>のれん（Goodwill）</strong>または<strong>割安購入益（Bargain purchase gain）</strong>を認識する</li></ol><h3>なぜ取得日に公正価値で測り直すのか</h3><p>買い手は「過去の帳簿価額」ではなく、取得日時点の経済的価値を取得しています。例：土地の帳簿価額60、時価100なら、連結上は原則100として捉え、差額40を取得時の公正価値調整として反映します。</p><div class="formula">識別可能純資産のFV ＝ 識別可能資産のFV − 引受負債のFV</div><div class="formula">Goodwill ＝ 取得対価のFV ＋ NCIのFV ＋ 既保有持分の取得日FV − 識別可能純資産のFV</div><p class="small">上記は一般式。初めて100%取得する問題なら NCI・既保有持分は0です。</p><h3>100%取得の独自例</h3><p>子会社の識別可能資産FV 1,000、負債FV 400、取得対価750。</p><pre>識別可能純資産FV = 1,000 − 400 = 600
+のれん = 750 − 600 = 150</pre><p>この150は、顧客基盤・シナジーなど、個別識別できる資産として計上しきれない将来の超過収益力等に対応します。<strong>「高く買った差額」すべてが無条件でのれんになるのではなく、まず識別可能資産・負債を適切に評価</strong>します。</p><h3>安く買ったら？</h3><p>対価550、純資産FV600なら差額50。測定や識別の見直しを行った後、なお差額があれば<strong>Bargain purchase gain（割安購入益）50</strong>を認識します。負ののれんを負債として繰り延べるわけではありません。</p><div class="warn">取得関連の弁護士・助言費用等は、原則として発生時に費用処理。株式・社債発行費用はそれぞれの発行会計に従い、取得対価と混同しない。</div></section>
+<section class="section" id="s3"><h2>03｜100%子会社の取得日連結</h2><p class="lead">親会社の「Investment in S」と子会社の「取得日前の純資産」は、グループから見れば同じ価値を二重に表している。</p><h3>独自例</h3><p>P社はS社株式100%を750で取得。S社の取得日帳簿純資産は500。土地のFV増額100、のれん150。したがって識別可能純資産FV600です。</p><div class="scroll"><table><tr><th>項目</th><th>金額</th><th>意味</th></tr><tr><td>取得日前S社純資産（簿価）</td><td>500</td><td>消去する子会社資本</td></tr><tr><td>土地FV調整</td><td>+100</td><td>帳簿価額→公正価値</td></tr><tr><td>Goodwill</td><td>+150</td><td>対価との差額</td></tr><tr><td>P社のInvestment in S</td><td>750</td><td>連結上消去</td></tr></table></div><h3>連結修正仕訳（取得日）</h3><pre>Dr  S社の取得日前資本合計       500
+Dr  Land（FV調整）             100
+Dr  Goodwill                  150
+    Cr Investment in S            750</pre><p>この仕訳は<strong>連結ワークシート上の調整</strong>です。P社・S社それぞれの個別帳簿から実際に株式や資本が消えるわけではありません。</p><h3>なぜ子会社のRetained Earningsを足さないのか</h3><p>取得日前のS社利益剰余金は、P社が支配する<strong>前</strong>に蓄積したものです。連結時に取得対価と相殺される取得日前資本の一部なので、取得日現在の連結利益剰余金は原則として<strong>P社の利益剰余金</strong>が基礎になります。</p><div class="call">例：取得日P社RE 600,000、S社RE 400,000、P社が80%取得。取得日連結REは<strong>600,000</strong>。400,000×80%を加算しない。</div><h3>初見の視線の動き</h3><ol class="steps"><li>取得日か、取得後かを確認</li><li>支配率を確認（100%か、一部か）</li><li>S社純資産の簿価・FV差額を確認</li><li>取得対価とNCIからGoodwillを計算</li><li>InvestmentとS社取得日前資本を消去</li></ol></section>
+<section class="section" id="s4"><h2>04｜非支配持分（Noncontrolling Interest：NCI）</h2><p>80%買収なら残り20%の株主が存在します。子会社は<strong>100%連結</strong>し、そのうち親会社に帰属しない持分をNCIとして区別します。</p><div class="diagram"><div class="node">S社資産・負債<br><strong>100%連結</strong></div><div class="arrow">→</div><div class="node">親会社持分<br><strong>80%</strong></div><div class="node">NCI<br><strong>20%</strong></div></div><h3>独自例：80%取得</h3><p>S社の識別可能純資産FV600。P社が80%を600で取得。残り20%の公正価値は150。</p><pre>Goodwill = 取得対価600 + NCI FV150 − 純資産FV600
+         = 150</pre><p>ここでNCIを単純に600×20%=120としないのがポイント。<strong>取得日NCIは原則として公正価値で測定</strong>するため、問題文にNCI FV150があれば150を使います。NCI FVが直接示されない場合は、問題の追加情報や仮定を確認します。</p><h3>取得日連結修正仕訳</h3><p>取得日前資本簿価500、土地FV増額100と仮定。</p><pre>Dr  S社取得日前資本             500
+Dr  Land（FV調整）             100
+Dr  Goodwill                  150
+    Cr Investment in S            600
+    Cr NCI                        150</pre><p>借方750＝貸方750。<strong>100%取得との違いは、投資を消しても残る外部株主の持分をNCIとして計上すること。</strong></p><h3>取得後のNCI</h3><div class="formula">期末NCI ＝ 期首NCI ＋ NCI帰属純利益 ＋ NCI帰属OCI − NCIへの配当 ± その他持分変動</div><p>独自例：取得日NCI150、取得後S社の調整後純利益100、NCI比率20%、NCIへの配当6。</p><pre>期末NCI = 150 + 100×20% − 6 = 164</pre><p>取得日以降のFV調整に伴う追加償却・減価償却等がある場合は、<strong>その影響を反映した利益</strong>を配分します。</p><div class="warn">「子会社の利益剰余金×親会社持分率」を、そのまま連結利益剰余金へ足すのは誤り。取得日前後の区別と連結調整が必要です。</div></section>
+<section class="section" id="s5"><h2>05｜取得後の連結：何を毎期調整するか</h2><p>取得日だけで連結処理は終わりません。翌期以降も親子会社は個別帳簿を持つため、連結時に調整が必要です。</p><div class="scroll"><table><tr><th>調整対象</th><th>なぜ必要か</th><th>代表的な処理</th></tr><tr><td>投資と資本</td><td>二重計上防止</td><td>Investment／子会社取得日前資本を消去</td></tr><tr><td>FV差額</td><td>取得日公正価値ベースの維持</td><td>追加減価償却・償却</td></tr><tr><td>内部売上・仕入</td><td>外部売上ではない</td><td>Sales／COGS消去</td></tr><tr><td>内部債権・債務</td><td>グループ内の請求・支払</td><td>A/R／A/P消去</td></tr><tr><td>棚卸未実現利益</td><td>外部販売前の利益</td><td>COGS／Inventory調整</td></tr><tr><td>固定資産内部売却</td><td>グループ内の売却益は未実現</td><td>Gain消去・減価償却調整</td></tr><tr><td>社債内部保有</td><td>グループとして自己債務を保有</td><td>みなし償還損益</td></tr><tr><td>子会社配当</td><td>内部移転と外部流出を区別</td><td>内部配当消去・NCI調整</td></tr></table></div><h3>取得日FV差額の取得後処理</h3><p>例：S社の機械の取得日FVが帳簿価額より100高く、残存耐用年数5年、定額法・残存価額0。連結上は毎年追加で100÷5＝20の減価償却が必要です。</p><pre>Dr Depreciation Expense       20
+    Cr Accumulated Depreciation   20</pre><p>土地のFV増額なら通常は減価償却なし。<strong>何の資産に差額が割り当てられたか</strong>が重要です。</p></section>
+<section class="section" id="s6"><h2>06｜内部売上と内部債権・債務の消去</h2><p>P社がS社に商品を掛売り。P社では売上と売掛金、S社では棚卸資産と買掛金を計上していても、グループ全体から見れば内部取引です。</p><h3>独自例：原価150、内部販売価格200</h3><p>P社の個別仕訳（継続記録法の例）：</p><pre>Dr Accounts Receivable   200
+    Cr Sales                 200
+Dr Cost of Goods Sold    150
+    Cr Inventory             150</pre><p>S社の個別仕訳：</p><pre>Dr Inventory             200
+    Cr Accounts Payable      200</pre><h3>連結修正の基本</h3><pre>① 内部売上消去
+Dr Sales                 200
+    Cr Cost of Goods Sold    200
 
-<section id="ratios">
-<div class="priority">優先度 S｜誤答・部分正解あり</div>
-<h2>02. 財務比率の変化</h2>
-<p><strong>根拠：</strong>M19-05で誤答2問・部分正解2問。後続の取引別比率問題でも確認が必要だった。</p>
-<div class="formula">
-Current Ratio = 流動資産 ÷ 流動負債<br>
-Inventory Turnover = 売上原価 ÷ 平均棚卸資産<br>
-Debt-to-Assets = 総負債 ÷ 総資産
-</div>
-<h3>同額が分子・分母から減るとき</h3>
-<table>
-<tr><th>元の比率</th><th>同額減少後</th></tr>
-<tr><td>1より大きい</td><td>比率は上昇</td></tr>
-<tr><td>1より小さい</td><td>比率は低下</td></tr>
-</table>
-<p><strong>例：</strong>流動比率400%で買掛金を支払うと、現金と買掛金が同額減るため流動比率は上昇する。</p>
-<h3>取引別の暗記</h3>
-<table>
-<tr><th>取引</th><th>Current</th><th>Inventory</th><th>Debt/Assets</th></tr>
-<tr><td>現金配当宣言・未払</td><td>↓</td><td>→</td><td>↑</td></tr>
-<tr><td>掛売商品の返品</td><td>↓</td><td>↓</td><td>↑</td></tr>
-<tr><td>株式配当</td><td>→</td><td>→</td><td>→</td></tr>
-<tr><td>買掛金の支払</td><td>↑</td><td>→</td><td>↓</td></tr>
-</table>
-<p class="muted">掛売返品は売価が原価を上回る前提。災害損失と保険金受領は純損失額の確認が必要。</p>
-</section>
+② 内部債権・債務消去（未決済なら）
+Dr Accounts Payable      200
+    Cr Accounts Receivable   200</pre><p>①だけでは<strong>在庫に含まれる内部利益50</strong>が残る場合があります。期末在庫の状態によって追加調整するのが次の3パターンです。</p><div class="call"><strong>覚える順序：</strong>①内部売上消去 → ②期末未実現利益の消去 → ③内部債権債務消去。各処理の対象は別です。</div></section>
+<section class="section" id="s7"><h2>07｜棚卸資産① 全部残っている</h2><p>上の例でS社が外部へ一切売らず、200すべてを期末在庫として保有した場合。</p><div class="scroll"><table><tr><th>項目</th><th>個別帳簿上</th><th>連結で正しい値</th></tr><tr><td>グループ外売上</td><td>P社200</td><td>0</td></tr><tr><td>棚卸資産</td><td>S社200</td><td>150（グループ原価）</td></tr><tr><td>内部利益</td><td>P社50</td><td>0</td></tr></table></div><h3>追加仕訳：未実現利益50を消す</h3><pre>Dr Cost of Goods Sold     50
+    Cr Inventory              50</pre><p><strong>なぜCOGSが借方？</strong> P社が個別で利益50を出しているので、連結では費用を50増やして利益を50減らすためです。<strong>なぜInventoryが貸方？</strong> S社の200という在庫評価額に内部利益50が上乗せされているため、グループ原価150へ戻します。</p><div class="good">結果：連結Sales＝0、連結COGS＝0、期末Inventory＝150。まだ外部に売れていないので利益ゼロ。</div></section>
+<section class="section" id="s8"><h2>08｜棚卸資産② 全部外部へ売れた</h2><p>S社がP社から200で仕入れた商品を、外部顧客に300で全部販売した場合。</p><pre>個別の合算：
+Sales = P社内部売上200 + S社外部売上300 = 500
+COGS  = P社原価150 + S社仕入原価200 = 350
+利益  = 150</pre><p>連結修正で内部売上200と内部仕入相当200を消します。</p><pre>Dr Sales                 200
+    Cr Cost of Goods Sold    200</pre><pre>連結Sales = 500 − 200 = 300
+連結COGS  = 350 − 200 = 150
+連結利益  = 150</pre><p>これはグループが150で仕入れた商品を外部に300で売った利益です。<strong>全部外部に売れているので期末未実現利益はゼロ</strong>。Inventoryの減額仕訳は不要です。内部債権債務が残っていれば別途消去します。</p></section>
+<section class="section" id="s9"><h2>09｜棚卸資産③ 一部だけ外部へ売れた</h2><p>FARで特に重要なケース。P社原価150、S社への内部販売価格200。S社が外部へ60%販売し、40%を期末保有。</p><h3>未実現利益の計算</h3><pre>内部売上総利益 = 200 − 150 = 50
+期末未実現利益 = 50 × 40% = 20</pre><p>または、S社の期末在庫80（200×40%）に内部粗利益率25%（50÷200）を掛けても20。</p><div class="formula">未実現利益 ＝ 期末在庫（内部売価ベース）×（内部売価−グループ原価）÷内部売価</div><h3>連結修正仕訳</h3><pre>Dr Sales                 200
+    Cr Cost of Goods Sold    200
 
-<section id="bonds">
-<div class="priority">優先度 A｜質問による理解確認</div>
-<h2>03. 社債・実効金利法</h2>
-<p><strong>根拠：</strong>発行費用、ディスカウント、償却額、繰上償還損益について複数回質問。</p>
-<div class="formula">
-当初帳簿価額 = 発行収入 − 社債発行費用<br>
-利息費用 = 期首帳簿価額 × 実効金利<br>
-帳簿価額増減 = 利息費用 − 現金利払額
-</div>
-<h3>ディスカウント発行</h3>
-<p>利息費用 ＞ 現金利払額。差額が帳簿価額に加算される。</p>
-<p><strong>例：</strong>当初帳簿価額$90,000、実効金利8.54%、現金利払$6,000。</p>
-<div class="formula">
-利息費用 = 90,000 × 8.54% = $7,686<br>
-期末帳簿価額 = 90,000＋7,686−6,000 = <strong>$91,686</strong>
-</div>
-<h3>発行費用の償却だけを問われたら</h3>
-<p>「発行費用込みの利息費用」から「発行費用なしの利息費用」を差し引く。</p>
-<div class="formula">
-$93,073 − $86,680 = <strong>$6,393</strong>
-</div>
-<h3>繰上償還</h3>
-<div class="formula">
-償還損益 = 償還時帳簿価額 − 償還支払額<br>
-正ならGain、負ならLoss
-</div>
-<p>Callable at 101 = 額面の101%で償還するという意味。</p>
-</section>
+Dr Cost of Goods Sold     20
+    Cr Inventory              20</pre><p>S社期末在庫80は連結上60（原価150×40%）へ修正。残り60%は外部へ売れているので、その部分の利益は実現しています。</p><h3>前期末の未実現利益が翌期に実現する場合</h3><p>前期末に残った在庫が翌期外部へ売れれば、前期に繰り延べた利益が翌期に実現します。翌期の連結修正では、前期末在庫の未実現利益の戻しと、当期末在庫の新たな未実現利益を区別します。</p><div class="warn">持分率80%でも、<strong>内部売上200の消去や在庫未実現利益20の消去を80%だけにしない</strong>。連結では内部取引を100%消去します。上流取引・下流取引によってNCIへの利益帰属調整が異なる点は別途判断します。</div><h3>Downstream / Upstream</h3><div class="scroll"><table><tr><th>方向</th><th>意味</th><th>未実現利益の帰属</th></tr><tr><td>Downstream</td><td>親 → 子</td><td>親会社側の利益の繰延べ。通常NCIへの帰属は生じない</td></tr><tr><td>Upstream</td><td>子 → 親</td><td>子会社側の利益の繰延べ。NCIへの帰属にも影響</td></tr></table></div></section>
+<section class="section" id="s10"><h2>10｜固定資産の内部売却と減価償却</h2><p>商品ではなく、設備をグループ内で売買しても、外部への売却ではありません。<strong>①内部売却損益を消す ②減価償却を売買がなかった場合に戻す</strong>の2段階です。</p><h3>独自例</h3><p>P社の機械：取得原価5,000、累計償却1,000、売却時帳簿価額4,000。S社へ5,200で売却。残存耐用年数4年、残存価額0、定額法。</p><pre>内部売却益 = 5,200 − 4,000 = 1,200
+S社の年間償却 = 5,200 ÷ 4 = 1,300
+グループ本来の年間償却 = 4,000 ÷ 4 = 1,000
+償却費の過大計上 = 300</pre><h3>連結修正の考え方</h3><pre>① 売却益の消去（純額表示の概念仕訳）
+Dr Gain on Sale of Equipment   1,200
+    Cr Equipment                  1,200
 
-<section id="exchange">
-<div class="priority">優先度 A｜直近の理解確認</div>
-<h2>04. 非貨幣性資産の交換</h2>
-<p><strong>根拠：</strong>Machine AとMachine Xの交換問題について、解法と公式を確認。</p>
-<h3>Commercial Substanceなし</h3>
-<p>原則は簿価引継ぎ。現金を受け取る側は、一定条件で利得を部分認識する。</p>
-<div class="formula">
-現金受取割合 = 受取現金 ÷ (受取資産のFV＋受取現金)<br>
-25%未満の場合の認識利得 = 総利得 × 現金受取割合<br>
-取得資産計上額 = 譲渡資産簿価 − 受取現金 ＋ 認識利得
-</div>
-<p><strong>例：</strong>旧機械簿価$315,000、FV$360,000、現金受取$60,000。</p>
-<div class="formula">
-総利得 = 360,000 − 315,000 = $45,000<br>
-現金割合 = 60,000 ÷ 360,000 = 16.67%<br>
-認識利得 = 45,000 × 16.67% = $7,500<br>
-新機械 = 315,000 − 60,000 ＋ 7,500 = <strong>$262,500</strong>
-</div>
-<p>ひっかけ：FVをそのまま取得資産の簿価にする、または受取現金を差し引き忘れる。</p>
-</section>
+② 償却費の過大計上を戻す
+Dr Accumulated Depreciation     300
+    Cr Depreciation Expense       300</pre><p class="small">①は取得原価・累計償却を純額で示す簡略表現。ワークシートで総額表示を維持する場合は、取得原価・累計償却を個別に復元する仕訳が必要です。</p><h3>最終チェック</h3><pre>売却直後のS社簿価 5,200
+− 内部利益の消去 1,200
+= グループ本来の簿価 4,000
 
-<section id="government">
-<div class="priority">優先度 B｜概念質問あり</div>
-<h2>05. 政府会計・修正発生主義</h2>
-<p><strong>根拠：</strong>Modified Accrual、基金負債、政府型基金の仕訳について質問。</p>
-<div class="formula">
-収益認識 = Measurable ＋ Available<br>
-政府型基金の支出 = Expenditures
-</div>
-<table>
-<tr><th>取引</th><th>Governmental Fund</th></tr>
-<tr><td>税金（認識条件充足）</td><td>Revenue</td></tr>
-<tr><td>長期社債発行</td><td>Other Financing Sources</td></tr>
-<tr><td>固定資産購入</td><td>Expenditures</td></tr>
-</table>
-<p><strong>重要：</strong>政府型基金では長期固定資産・長期負債を原則として基金のB/Sに計上しない。Government-wide Statementsでは発生主義で認識する。</p>
-<p class="muted">補助金収益は受領だけでなく、適格性要件・期間要件などの確認が必要。長期債務の元利金支出には認識上の例外がある。</p>
-</section>
-
-<section id="nfp">
-<div class="priority">優先度 B｜用語質問あり</div>
-<h2>06. NFP・非営利組織会計</h2>
-<p><strong>根拠：</strong>Statement of Activities、寄付者制約のある・ない純資産の区分について質問。</p>
-<table>
-<tr><th>営利企業</th><th>NFP</th></tr>
-<tr><td>Income Statement</td><td>Statement of Activities</td></tr>
-<tr><td>Net Income</td><td>Change in Net Assets</td></tr>
-<tr><td>Balance Sheet</td><td>Statement of Financial Position</td></tr>
-</table>
-<div class="formula">
-Without Donor Restrictions = 寄付者による制約なし<br>
-With Donor Restrictions = 寄付者による制約あり
-</div>
-<p>制約解除時は、通常、With Donor Restrictionsが減少し、Without Donor Restrictionsが増加する。純資産合計は変わらない。</p>
-</section>
-
-<section id="quiz">
-<h2>07. 5問・即答チェック</h2>
-<p>解答を見る前に、公式と判断根拠を声に出して確認。</p>
-<details><summary>Q1. 原価$850、売上高利益率15%。売価は？</summary><p><strong>$1,000。</strong> 850 ÷ 0.85。</p></details>
-<details><summary>Q2. Current Ratio 400%。買掛金を現金で支払うと？</summary><p><strong>上昇。</strong> 分子・分母が同額減少し、元の比率が1より大きい。</p></details>
-<details><summary>Q3. 社債の利息費用$9,000、現金利払$7,000。簿価は？</summary><p><strong>$2,000増加。</strong> 利息費用−現金利払。</p></details>
-<details><summary>Q4. 政府型基金が長期社債を発行。貸方は？</summary><p><strong>Other Financing Sources。</strong> 基金では長期社債を通常の長期負債として計上しない。</p></details>
-<details><summary>Q5. NFPで寄付者制約が解除。純資産合計は？</summary><p><strong>変化なし。</strong> 2つの純資産区分間での振替。</p></details>
-</section>
-
-<section>
-<h2>08. 暗記完了チェックリスト</h2>
-<label class="check"><input type="checkbox"> CVPの逆算公式を再現できる</label>
-<label class="check"><input type="checkbox"> 売上高利益率と原価マークアップを区別できる</label>
-<label class="check"><input type="checkbox"> 3つの財務比率を暗算で判定できる</label>
-<label class="check"><input type="checkbox"> 社債の帳簿価額を実効金利法で更新できる</label>
-<label class="check"><input type="checkbox"> 社債発行費用の償却額だけを求められる</label>
-<label class="check"><input type="checkbox"> 非貨幣性資産交換の現金25%判定ができる</label>
-<label class="check"><input type="checkbox"> Governmental Fundsの特殊仕訳を説明できる</label>
-<label class="check"><input type="checkbox"> NFPの純資産2区分を区別できる</label>
-</section>
-</main>
-<footer>
-<small>Evidence: 過去のM19正誤記録・FAR質問履歴。優先順位は学習上の推定であり、Blueprint上の出題頻度ランキングではありません。質問した論点を誤答とみなしていません。</small>
-</footer>
-</body>
-</html>
+1年後：
+S社簿価 5,200 − 1,300 = 3,900
+連結調整 −1,200 +300
+= 3,000（4,000 − 1,000）</pre><div class="call">判断基準は常に「<strong>この設備をP社が売らずに保有し続けたら、連結上の簿価と償却費はいくらか</strong>」。</div></section>
+<section class="section" id="s11"><h2>11｜社債の内部保有＝みなし早期償還</h2><p>P社が外部へ発行した社債を、S社が市場で買い入れた場合、連結グループとしては<strong>自分の借金を市場から買い戻した</strong>ことと同じです。</p><h3>独自例</h3><p>P社社債の買入日時点の帳簿価額1,000、S社の市場購入価格940。</p><pre>連結上の償還益 = 社債の帳簿価額1,000 − 取得価格940
+                = 60</pre><h3>連結修正仕訳（単純化した例）</h3><pre>Dr Bonds Payable             1,000
+    Cr Investment in Bonds       940
+    Cr Gain on Constructive
+       Retirement of Bonds        60</pre><p>外部に対する負債とグループ内の社債投資が相殺されます。取得価格が帳簿価額を上回るなら、差額は損失です。</p><p><strong>注意：</strong>実際の問題では、社債割引・プレミアムの未償却残高、社債投資の帳簿価額、利息収益・費用、未収未払利息、期中取得日なども確認します。</p><div class="good">覚え方：「グループの社債をグループが買った」＝連結では自己社債の償還とみなす。</div></section>
+<section class="section" id="s12"><h2>12｜子会社の配当消去</h2><p>子会社が親会社へ配当しても、グループ内で現金が移動しただけです。一方、<strong>NCIへの配当は外部株主への資金流出</strong>なので消してはいけません。</p><h3>独自例：親会社75%、NCI25%</h3><p>S社が配当総額16,000を支払う。親会社受取12,000、NCI受取4,000。</p><div class="scroll"><table><tr><th>受取人</th><th>配当額</th><th>連結上</th></tr><tr><td>親会社P</td><td>12,000</td><td>内部移転として消去</td></tr><tr><td>外部のNCI株主</td><td>4,000</td><td>NCIの減少</td></tr></table></div><p>親会社が受取配当金収益として計上している簡略例なら、内部配当12,000を消去します。</p><pre>Dr Dividend Income         12,000
+    Cr Dividends Declared /
+       Retained Earnings等    12,000</pre><p class="small">貸方科目は個別帳簿での配当処理、持分法の適用状況、連結ワークシートの形式により異なります。親会社が持分法で配当を投資勘定の減少として記録している場合、上記のDividend Incomeは発生しません。</p><p>外部NCIへの4,000は、連結利益を減らす費用ではなく<strong>NCI純資産の減少</strong>です。</p><pre>期末NCIの計算では
+NCIへの配当 4,000 を控除する</pre></section>
+<section class="section" id="s13"><h2>13｜NCIの表示・開示</h2><p>講義終盤の論点。米国の連結財務諸表では、親会社持分とNCIの帰属を明確に区分します。</p><div class="scroll"><table><tr><th>財務諸表</th><th>ポイント</th></tr><tr><td>連結B/S</td><td>NCIをEquityに表示。親会社株主資本と区分</td></tr><tr><td>連結P/L</td><td>連結純利益と、親会社・NCIそれぞれに帰属する純利益を表示</td></tr><tr><td>包括利益</td><td>親会社とNCIに帰属する包括利益を区分</td></tr><tr><td>資本変動情報</td><td>親会社持分・NCIの期首から期末への変動を示す</td></tr></table></div><h3>独自例：利益配分</h3><p>S社の連結調整後純利益100、NCI20%なら、NCI帰属純利益20、親会社帰属分80（他の調整がない場合）。</p><div class="warn">「連結純利益100」そのものを80に減額するのではなく、<strong>全体の純利益100を表示したうえで帰属を区分</strong>します。</div><h3>決算日が違う場合</h3><p>原則として連結決算日を揃えます。実務上、子会社決算日とのずれが<strong>3か月以内</strong>である場合に一定の取扱いが認められますが、重要な期中取引・事象の調整や開示が必要です。決算日が違うからといって子会社を自動的に連結除外しません。</p></section>
+<section class="section" id="s14"><h2>14｜FARでの初見解法と頻出の落とし穴</h2><h3>問題を読んだらこの順番</h3><ol class="steps"><li><strong>いつ？</strong>取得日か、取得後か、期末か</li><li><strong>何%？</strong>支配割合、NCIの有無</li><li><strong>何を聞く？</strong>Goodwill、NCI、連結RE、未実現利益、仕訳、社債償還損益</li><li><strong>FVかBVか？</strong>識別可能純資産のFV差額を拾う</li><li><strong>外部に出たか？</strong>棚卸資産の外部販売割合・残存割合を確認</li><li><strong>100%消去か、利益帰属配分か？</strong>内部取引消去とNCI配分を混同しない</li><li><strong>検算：</strong>仕訳貸借一致、利益と資産の整合を確認</li></ol><div class="scroll"><table><tr><th>誤答パターン</th><th>正しい考え方</th></tr><tr><td>80%取得だから資産も80%だけ連結</td><td>支配下の子会社は原則100%連結し、NCIを区分</td></tr><tr><td>子会社の取得日前RE×80%を連結REに加算</td><td>取得日前資本は取得時に消去</td></tr><tr><td>NCIは負債</td><td>Equityの一部</td></tr><tr><td>内部売上を消したので在庫利益も消えた</td><td>期末未実現利益は別途消去</td></tr><tr><td>在庫に残る利益を売上総額×利益率で計算</td><td>期末在庫（内部売価ベース）×内部粗利益率</td></tr><tr><td>固定資産の内部売却益だけ消す</td><td>償却費も「売らなかった場合」に戻す</td></tr><tr><td>社債投資と負債を同額で消すだけ</td><td>帳簿価額と取得価格の差額＝みなし償還損益</td></tr><tr><td>NCI配当を費用処理</td><td>NCI Equityの減少</td></tr></table></div></section>
+<section class="section" id="s15"><h2>15｜総合演習：解いてから解答を開く</h2>
+<div class="quiz"><b>Q1｜取得日連結RE</b><p>P社RE 600,000、S社RE 400,000。P社がS社80%を取得した。取得日連結REは？</p><button onclick="answer(this,false,'取得日前S社REは消去するため加算しません。')">A. 920,000</button><button onclick="answer(this,true,'正解。取得日連結REは原則P社の600,000。')">B. 600,000</button><button onclick="answer(this,false,'S社RE全額を足しません。')">C. 1,000,000</button><div class="result"></div></div>
+<div class="quiz"><b>Q2｜Goodwill</b><p>80%取得対価600、NCI FV150、識別可能純資産FV600。のれんは？</p><button onclick="answer(this,false,'NCI FVを加える必要があります。')">A. 0</button><button onclick="answer(this,true,'正解。600＋150−600＝150。')">B. 150</button><button onclick="answer(this,false,'取得対価だけを純資産から引かないでください。')">C. 600</button><div class="result"></div></div>
+<div class="quiz"><b>Q3｜期末未実現利益</b><p>内部販売価格200、グループ原価150。内部売価ベースで期末在庫80。未実現利益は？</p><button onclick="answer(this,false,'内部利益全額50ではなく、残存在庫分のみです。')">A. 50</button><button onclick="answer(this,true,'正解。80×(50÷200)＝20。')">B. 20</button><button onclick="answer(this,false,'原価率75%ではなく利益率25%を使います。')">C. 60</button><div class="result"></div></div>
+<div class="quiz"><b>Q4｜固定資産</b><p>売却前簿価4,000、内部売価5,200、残存4年。S社の定額償却が1,300なら、連結で償却費をいくら減らす？</p><button onclick="answer(this,true,'正解。本来1,000なので300減額。')">A. 300</button><button onclick="answer(this,false,'1,200は内部売却益で、年間償却差額ではありません。')">B. 1,200</button><button onclick="answer(this,false,'1,000は本来の年間償却額です。')">C. 1,000</button><div class="result"></div></div>
+<div class="quiz"><b>Q5｜社債</b><p>親会社の社債簿価1,000を子会社が市場で940で取得。連結上は？</p><button onclick="answer(this,false,'安く買い戻したので損失ではありません。')">A. 損失60</button><button onclick="answer(this,true,'正解。みなし早期償還益60。')">B. 利益60</button><button onclick="answer(this,false,'投資と負債の差額を無視できません。')">C. 損益なし</button><div class="result"></div></div>
+<div class="quiz"><b>Q6｜配当</b><p>子会社が16,000配当。親75%、NCI25%。連結上、外部への配当はいくら？</p><button onclick="answer(this,false,'12,000は親会社への内部配当です。')">A. 12,000</button><button onclick="answer(this,true,'正解。16,000×25%＝4,000。')">B. 4,000</button><button onclick="answer(this,false,'親会社への配当は内部移転です。')">C. 16,000</button><div class="result"></div></div>
+<details><summary>総合記述問題：解答・解説を表示</summary><p><b>問題：</b>P社がS社80%を取得。取得日S社簿価純資産500、FV差額100（耐用5年の機械）、取得対価600、NCI FV150。取得後1年のS社個別利益100、配当20。取得日Goodwill、追加償却、NCI帰属利益、期末NCIを求めよ。他の調整なし。</p><pre>取得日FV純資産 = 500+100 = 600
+Goodwill = 600+150−600 = 150
+追加償却 = 100÷5 = 20
+調整後S社利益 = 100−20 = 80
+NCI帰属利益 = 80×20% = 16
+NCI配当 = 20×20% = 4
+期末NCI = 150+16−4 = 162</pre><p><b>学び：</b>取得日のFV調整は、取得後の利益とNCI計算にも影響します。</p></details></section>
+<section class="section" id="s16"><h2>16｜試験直前の暗記シート</h2><div class="scroll"><table><tr><th>論点</th><th>最低限覚えること</th></tr><tr><td>連結</td><td>親子を1つの経済主体として扱う</td></tr><tr><td>取得法</td><td>取得日FV、識別可能純資産、Goodwill</td></tr><tr><td>Goodwill</td><td>対価＋NCI FV＋既保有持分FV−識別可能純資産FV</td></tr><tr><td>取得日RE</td><td>原則、親会社REが基礎。子会社取得日前REを加算しない</td></tr><tr><td>NCI</td><td>子会社を100%連結し、外部持分をEquityに表示</td></tr><tr><td>内部売上</td><td>Dr Sales / Cr COGS</td></tr><tr><td>内部A/R・A/P</td><td>Dr A/P / Cr A/R</td></tr><tr><td>棚卸未実現利益</td><td>Dr COGS / Cr Inventory</td></tr><tr><td>固定資産</td><td>内部売却益を消し、償却費を戻す</td></tr><tr><td>社債内部保有</td><td>みなし償還：簿価−買入価格＝償還益（正の場合）</td></tr><tr><td>配当</td><td>親への内部配当は消去、NCIへの配当はNCI減少</td></tr><tr><td>開示</td><td>親会社帰属とNCI帰属を区分</td></tr></table></div><div class="good"><strong>最終的な一行：</strong>連結のすべての調整は「グループ外部から見て、その取引・利益・資産・負債は本当に存在するか？」を問う作業。</div></section>
+<section class="section" id="sources"><h2>資料・適用範囲・注記</h2><p>本教材はアップロードされた<strong>『FAR教科書3(1).pdf』のChapter 14</strong>と<strong>『Chapter14_連結財務諸表.txt』</strong>の講義構成を参考に、理解促進のために再構成した<strong>独自の解説教材</strong>です。講義文字起こしは自動認識の誤変換が多いため、数値例は原則として教材用の独自例を使用しています。教科書の全ページの逐語転載や、全設問・全図表の再現ではありません。</p><p>講義時間対応：00:00–07:15 企業結合／07:15–12:54 100%取得／12:54–20:10 NCI／20:10–32:04 内部売上・在庫／32:04–35:05 固定資産／35:05–37:14 社債／37:14–40:39 配当／40:39–42:49 表示・開示。</p><p>会計上の主要参照基準：ASC 805（Business Combinations）、ASC 810（Consolidation）。試験範囲の判断は受験年度のAICPA CPA Exam Blueprintsを優先してください。</p></section><div class="footer">FAR Chapter 14｜学習用オリジナル解説HTML</div></article></main><script>function answer(b,ok,msg){const box=b.closest('.quiz');box.querySelectorAll('button').forEach(x=>{x.style.borderColor='#bfd4e8';x.style.background='white'});b.style.borderColor=ok?'#249166':'#d28b1e';b.style.background=ok?'#e8f6ef':'#fff4df';box.querySelector('.result').textContent=(ok?'正解：':'確認：')+msg}</script></body></html>
